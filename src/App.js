@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import ApiFetch from '@components/ApiFetch';
+import NameForm from '@components/NameForm';
 
 function App() {
-  const [data, setData] = useState('');
+  const Header = 'h1'
+  return (
+    <div>
+      <Header>Research Computing Christmas Puzzle</Header>
+      <div><ApiFetch /></div>
+      <div><NameForm /></div>
+    </div>
+  )
 
-  useEffect(() => {
-    (async function () {
-      const { text } = await (await fetch(`/api/message`)).json();
-      setData(text);
-    })();
-  });
-
-  return <div>{data}</div>;
 }
+
 
 export default App;
