@@ -1,5 +1,5 @@
 import React from 'react';
-import ApiFetch from './ApiFetch';
+import axios from 'axios';
 
 class NameForm extends React.Component {
     constructor(props) {
@@ -11,10 +11,9 @@ class NameForm extends React.Component {
 
     handleChange(event) { this.setState({ value: event.target.value }); }
     handleSubmit(event) {
-        ApiFetch(this.state.value)
-            .then(result => {
-                this.setState({ result });
-            });
+        axios.post("/api/message", { 'name': this.state.value })
+            .then(response => this.setState({ result: response.data }))
+        event.preventDefault();
     }
 
     render() {
