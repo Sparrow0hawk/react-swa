@@ -1,4 +1,5 @@
 import React from 'react';
+import ApiFetch from './ApiFetch';
 
 class NameForm extends React.Component {
     constructor(props) {
@@ -10,17 +11,24 @@ class NameForm extends React.Component {
 
     handleChange(event) { this.setState({ value: event.target.value }); }
     handleSubmit(event) {
-        alert('A name was submitted: ' + this.state.value);
-        event.preventDefault();
+        ApiFetch(this.state.value)
+            .then(result => {
+                this.setState({ result });
+            });
     }
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>        <label>
-                Name:
-                <input type="text" value={this.state.value} onChange={this.handleChange} />        </label>
-                <input type="submit" value="Submit" />
-            </form>
+            <div>
+                <form onSubmit={this.handleSubmit}>        <label>
+                    Name:
+                    <input type="text" value={this.state.value} onChange={this.handleChange} />        </label>
+                    <input type="submit" value="Submit" />
+                </form>
+                <div>
+                    {this.state.result}
+                </div>
+            </div>
         );
     }
 }
