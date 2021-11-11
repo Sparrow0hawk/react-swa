@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-function ApiFetch() {
+function ApiFetch(param) {
     const [data, setData] = useState('');
 
     useEffect(() => {
         (async function () {
-            const { text } = await (await fetch(`/api/message`)).json();
+            const { text } = await (await fetch("/api/message?name=" + param)).json();
             setData(text);
         })();
     });
 
-    return <div>{data}</div>;
+    return data;
 }
 
 
