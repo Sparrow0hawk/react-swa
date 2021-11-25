@@ -6,14 +6,14 @@ function Day2() {
   const Header = 'h1'
   return (
     <div>
-        <div>
+      <div>
         <Header>Research Computing Christmas Puzzle</Header>
-        </div>
-        <div>
-            This is day 2's puzzle!
-            <div><ApiFetch /></div>
-            <div><NameForm /></div>
-        </div>
+        <p>This is page 2!</p>
+      </div>
+      <div>
+        <div><ApiFetch /></div>
+        <div><NameForm /></div>
+      </div>
     </div>
   )
 
