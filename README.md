@@ -1,5 +1,33 @@
-# React basic
+# Basic Azure static site using azure function with react
 
-[Azure Static Web Apps](https://docs.microsoft.com/azure/static-web-apps/overview) allows you to easily build [React](https://reactjs.org/) apps in minutes. Use this repo with the [React quickstart](https://docs.microsoft.com/azure/static-web-apps/getting-started?tabs=react) to build and customize a new static site.
+## Setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+You'll need Node 16 (recommend installing via [nvm](https://github.com/nvm-sh/nvm)) and python 3.7 installed.
+
+## Setup venv
+
+```bash
+# setup venv
+$ cd api
+
+$ python -m venv venv
+
+$ pip install -r requirements.txt
+```
+
+## Setup node environment
+
+```bash
+$ npm install -g azure-functions-core-tools@3 --unsafe-perm true
+$ npm install -g @azure/static-web-apps-cli
+```
+
+Running locally
+
+```bash
+$ npm install
+
+$ npm run build
+
+$ swa start build/ --api-location api/
+```
