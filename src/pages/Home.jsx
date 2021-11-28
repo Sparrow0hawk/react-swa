@@ -1,14 +1,13 @@
 import React from 'react';
-import ApiFetch from '@components/ApiFetch';
-import NameForm from '@components/NameForm';
+import { Link } from "react-router-dom"
 
 function Home() {
   const Header = 'h1'
   return (
     <div>
       <Header>Research Computing Christmas Puzzle</Header>
-      <div><ApiFetch /></div>
-      <div><NameForm /></div>
+      <Link to="/day1">1</Link>
+      <Link to="/day2">2</Link>
     </div>
   )
 
