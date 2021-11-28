@@ -1,9 +1,9 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import Day1 from '../pages/day1';
-import Day2 from '../pages/day2';
+import Home from '@pages/Home';
+import Day1 from '@pages/day1';
+import Day2 from '@pages/day2';
 
 const Main = () => {
   return (
