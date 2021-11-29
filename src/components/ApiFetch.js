@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 function ApiFetch(param) {
     const [data, setData] = useState('');
+    const location = useLocation();
+    const domain = location.pathname.substring(1)
 
     useEffect(() => {
         (async function () {
-            const { text } = await (await fetch("/api/message?name=" + param)).json();
+            const { text } = await (await fetch("/api/message?day=" + domain + "&answer=" + param)).json();
             setData(text);
         })();
     });
